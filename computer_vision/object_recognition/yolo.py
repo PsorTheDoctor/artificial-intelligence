@@ -3,8 +3,10 @@ import cv2
 
 net = cv2.dnn.readNetFromDarknet('yolov3.cfg', 'yolov3.weights')
 # net = cv2.dnn.readNet('yolov3.weights', 'yolov3.cfg')
-layerNames = net.getLayerNames()
-layerNames = [layerNames[i[0] - 1] for i in net.getUnconnectedOutLayers()]
+
+# layerNames = net.getLayerNames()
+# layerNames = [layerNames[i[0] - 1] for i in net.getUnconnectedOutLayers()]
+layerNames = ['yolo_82', 'yolo_94', 'yolo_106']
 
 labels = open('coco.names').read().strip().split('\n')
 colors = np.random.randint(0, 255, size=(len(labels), 3), dtype='uint8')
@@ -53,7 +55,7 @@ while True:
             cv2.putText(frame, text, (x, y - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
 
     cv2.imshow('Yolo', frame)
-    if cv2.waitKey(1) == 27:
+    if cv2.waitKey(50) == 27:
         break
 
 cap.release()
