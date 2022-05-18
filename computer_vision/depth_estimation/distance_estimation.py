@@ -5,6 +5,7 @@ from imutils.video import VideoStream
 face_detector = mp.solutions.face_detection
 draw = mp.solutions.drawing_utils
 
+# Model files can be downloaded here: https://github.com/isl-org/MiDaS/releases/tag/v2_1
 model_name = 'model-small.onnx'
 model = cv2.dnn.readNet(model_name)
 
