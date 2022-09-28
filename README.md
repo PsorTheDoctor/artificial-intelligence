@@ -1,2 +1,2 @@
-# Sekcja-SI
-Projekty stworzone w ramach sekcji SI
+# artificial-intelligence
+AI projects in python, mostly Jupyter notebooks.
